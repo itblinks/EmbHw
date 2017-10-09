@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Wed Oct  4 13:53:42 2017
+Quartus Prime Version : 16.0.2 Build 222 07/20/2016 SJ Lite Edition
+Revision Name : lab2IRQTCM
+Top-level Entity Name : lab2IRQTCM
+Family : Cyclone IV E
+Total logic elements : 5,470
+    Total combinational functions : 4,450
+    Dedicated logic registers : 3,254
+Total registers : 3254
+Total pins : 48
+Total virtual pins : 0
+Total memory bits : 65,088
+Embedded Multiplier 9-bit elements : 6
+Total PLLs : 1
