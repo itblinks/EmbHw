@@ -67,8 +67,8 @@ begin
 				--Read cycle
 				case Address_DI(2 downto 0) is
 					when "000"  => ReadData_DO <= RegDir_D;
-					when "010"  => ReadData_DO <= RegPin_D;
-					when "011"  => ReadData_DO <= RegPort_D;
+					when "001"  => ReadData_DO <= RegPin_D;
+					when "010"  => ReadData_DO <= RegPort_D;
 					when others => null;
 				end case;
 			end if;

@@ -4,7 +4,7 @@
  * Machine generated for CPU 'CPU' in SOPC Builder design 'sopc_config'
  * SOPC Builder design path: ../../sopc_config.sopcinfo
  *
- * Generated: Tue Oct 10 21:48:06 CEST 2017
+ * Generated: Tue Oct 10 23:01:01 CEST 2017
  */
 
 /*
@@ -158,7 +158,7 @@
  */
 
 #define ALT_MODULE_CLASS_LEDS PIO_IP
-#define LEDS_BASE 0x0
+#define LEDS_BASE 0x2004078
 #define LEDS_IRQ -1
 #define LEDS_IRQ_INTERRUPT_CONTROLLER_ID -1
 #define LEDS_NAME "/dev/LEDS"
@@ -172,7 +172,7 @@
  */
 
 #define ALT_MODULE_CLASS_PLL altpll
-#define PLL_BASE 0x2004070
+#define PLL_BASE 0x2004060
 #define PLL_IRQ -1
 #define PLL_IRQ_INTERRUPT_CONTROLLER_ID -1
 #define PLL_NAME "/dev/PLL"
@@ -235,19 +235,19 @@
 #define ALT_NUM_INTERNAL_INTERRUPT_CONTROLLERS 1
 #define ALT_NUM_INTERRUPT_CONTROLLERS 1
 #define ALT_STDERR "/dev/jtag_uart"
-#define ALT_STDERR_BASE 0x2004090
+#define ALT_STDERR_BASE 0x2004088
 #define ALT_STDERR_DEV jtag_uart
 #define ALT_STDERR_IS_JTAG_UART
 #define ALT_STDERR_PRESENT
 #define ALT_STDERR_TYPE "altera_avalon_jtag_uart"
 #define ALT_STDIN "/dev/jtag_uart"
-#define ALT_STDIN_BASE 0x2004090
+#define ALT_STDIN_BASE 0x2004088
 #define ALT_STDIN_DEV jtag_uart
 #define ALT_STDIN_IS_JTAG_UART
 #define ALT_STDIN_PRESENT
 #define ALT_STDIN_TYPE "altera_avalon_jtag_uart"
 #define ALT_STDOUT "/dev/jtag_uart"
-#define ALT_STDOUT_BASE 0x2004090
+#define ALT_STDOUT_BASE 0x2004088
 #define ALT_STDOUT_DEV jtag_uart
 #define ALT_STDOUT_IS_JTAG_UART
 #define ALT_STDOUT_PRESENT
@@ -272,7 +272,7 @@
  */
 
 #define ALT_MODULE_CLASS_jtag_uart altera_avalon_jtag_uart
-#define JTAG_UART_BASE 0x2004090
+#define JTAG_UART_BASE 0x2004088
 #define JTAG_UART_IRQ 0
 #define JTAG_UART_IRQ_INTERRUPT_CONTROLLER_ID 0
 #define JTAG_UART_NAME "/dev/jtag_uart"
@@ -305,13 +305,13 @@
  */
 
 #define ALT_MODULE_CLASS_sysid altera_avalon_sysid_qsys
-#define SYSID_BASE 0x2004088
-#define SYSID_ID 12213762
+#define SYSID_BASE 0x2004080
+#define SYSID_ID 12213764
 #define SYSID_IRQ -1
 #define SYSID_IRQ_INTERRUPT_CONTROLLER_ID -1
 #define SYSID_NAME "/dev/sysid"
 #define SYSID_SPAN 8
-#define SYSID_TIMESTAMP 1507664610
+#define SYSID_TIMESTAMP 1507668842
 #define SYSID_TYPE "altera_avalon_sysid_qsys"
 
 

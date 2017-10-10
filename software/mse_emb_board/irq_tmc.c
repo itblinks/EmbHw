@@ -18,7 +18,7 @@ typedef struct Counter {
 static void handle_timerIRQ(void* context, alt_u32 id)__attribute__ ((section(".exceptions")));
 
 int main(void) {
-	Counter downTimer = { .value = 0, .isNew = false };
+ 	Counter downTimer = { .value = 0, .isNew = false };
 	alt_irq_context statusISR;
 	puts("Reset performance counter");
 	PERF_RESET(PERFORMANCE_COUNTER_BASE);
@@ -42,11 +42,12 @@ int main(void) {
 	alt_irq_enable_all(statusISR);
 	puts("Enabled all IRQs\n");
 	while (downTimer.value <= COUNT_MAX) {
-		if (downTimer.isNew)
+		if (downTimer.isNew){
 			printf("New count value = %lu\n", (alt_u32) (downTimer.isNew =
 			false, downTimer.value));
+			printf("LEDS Value %lu\n", (alt_u32) IORD_8DIRECT(LEDS_BASE, 0));
+		}
 		asm volatile ("nop");
-		IORD_16DIRECT(TIMER_BASE, ALTERA_AVALON_TIMER_STATUS_REG);
 	}
 	puts("Stop measuring with performance counter");
 	PERF_STOP_MEASURING(PERFORMANCE_COUNTER_BASE);
