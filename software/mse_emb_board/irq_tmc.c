@@ -22,10 +22,14 @@ int main(void) {
 	alt_irq_context statusISR;
 	puts("Reset performance counter");
 	PERF_RESET(PERFORMANCE_COUNTER_BASE);
+
+	//setup LEDs
+	IOWR_8DIRECT(LEDS_BASE,0,0xFF); //all outputs
+
 	puts("Disable IRQs");
 	statusISR = alt_irq_disable_all();
 	puts("Register timer IRQ handler...");
-	int err = alt_irq_register(TIMER_IRQ, &downTimer,
+    alt_irq_register(TIMER_IRQ, &downTimer,
 			(alt_isr_func) handle_timerIRQ);
 	puts("Clear pending timer IRQs...");
 	IOWR_ALTERA_AVALON_TIMER_CONTROL(TIMER_BASE, CLEAR_IRQ);
@@ -42,8 +46,7 @@ int main(void) {
 			printf("New count value = %lu\n", (alt_u32) (downTimer.isNew =
 			false, downTimer.value));
 		asm volatile ("nop");
-		volatile int status = IORD_16DIRECT(TIMER_BASE,
-				ALTERA_AVALON_TIMER_STATUS_REG);
+		IORD_16DIRECT(TIMER_BASE, ALTERA_AVALON_TIMER_STATUS_REG);
 	}
 	puts("Stop measuring with performance counter");
 	PERF_STOP_MEASURING(PERFORMANCE_COUNTER_BASE);
@@ -56,7 +59,7 @@ static void handle_timerIRQ(void* context, alt_u32 id) {
 	Counter* data_ptr = (Counter*) context;
 	++(data_ptr->value);
 	data_ptr->isNew = true;
-	IOWR_8DIRECT(LEDS_BASE, 0, data_ptr->value);
+	IOWR_8DIRECT(LEDS_BASE, 2, data_ptr->value);
 	IOWR_16DIRECT(TIMER_BASE, ALTERA_AVALON_TIMER_STATUS_REG, CLEAR_IRQ);
 	PERF_END(PERFORMANCE_COUNTER_BASE, PERFORMANCE_COUNTER_SEG_ISR); //first section
 }

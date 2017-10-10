@@ -258,13 +258,6 @@ agreement for further details.
 		(line (pt 0 152)(pt 144 152))
 	)
 	(port
-		(pt 0 112)
-		(output)
-		(text "leds_export[7..0]" (rect 0 0 95 14)(font "Arial" (font_size 8)))
-		(text "leds_export[7..0]" (rect 4 101 99 115)(font "Arial" (font_size 8)))
-		(line (pt 0 112)(pt 144 112)(line_width 3))
-	)
-	(port
 		(pt 352 72)
 		(output)
 		(text "sdram_clk_clk" (rect 0 0 80 14)(font "Arial" (font_size 8)))
@@ -328,6 +321,13 @@ agreement for further details.
 		(line (pt 0 320)(pt 144 320))
 	)
 	(port
+		(pt 0 112)
+		(bidir)
+		(text "leds_1_export[7..0]" (rect 0 0 109 14)(font "Arial" (font_size 8)))
+		(text "leds_1_export[7..0]" (rect 4 101 113 115)(font "Arial" (font_size 8)))
+		(line (pt 0 112)(pt 144 112)(line_width 3))
+	)
+	(port
 		(pt 0 272)
 		(bidir)
 		(text "sdram_ctrl_wire_dq[15..0]" (rect 0 0 149 14)(font "Arial" (font_size 8)))
@@ -337,7 +337,7 @@ agreement for further details.
 	(drawing
 		(text "clk" (rect 129 43 146 58)(font "Arial" (color 128 0 0)(font_size 9)))
 		(text "clk" (rect 149 67 163 79)(font "Arial" (color 0 0 0)))
-		(text "leds" (rect 121 83 149 98)(font "Arial" (color 128 0 0)(font_size 9)))
+		(text "leds_1" (rect 108 83 152 98)(font "Arial" (color 128 0 0)(font_size 9)))
 		(text "export" (rect 149 107 179 119)(font "Arial" (color 0 0 0)))
 		(text "reset" (rect 115 123 148 138)(font "Arial" (color 128 0 0)(font_size 9)))
 		(text "reset_n" (rect 149 147 185 159)(font "Arial" (color 0 0 0)))

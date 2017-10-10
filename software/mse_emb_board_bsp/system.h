@@ -4,7 +4,7 @@
  * Machine generated for CPU 'CPU' in SOPC Builder design 'sopc_config'
  * SOPC Builder design path: ../../sopc_config.sopcinfo
  *
- * Generated: Tue Oct 10 21:12:25 CEST 2017
+ * Generated: Tue Oct 10 21:48:06 CEST 2017
  */
 
 /*
@@ -145,38 +145,25 @@
 #define __ALTERA_AVALON_NEW_SDRAM_CONTROLLER
 #define __ALTERA_AVALON_ONCHIP_MEMORY2
 #define __ALTERA_AVALON_PERFORMANCE_COUNTER
-#define __ALTERA_AVALON_PIO
 #define __ALTERA_AVALON_SYSID_QSYS
 #define __ALTERA_AVALON_TIMER
 #define __ALTERA_NIOS2_GEN2
 #define __ALTPLL
+#define __PIO_IP
 
 
 /*
- * LEDs configuration
+ * LEDS configuration
  *
  */
 
-#define ALT_MODULE_CLASS_LEDs altera_avalon_pio
-#define LEDS_BASE 0x2004060
-#define LEDS_BIT_CLEARING_EDGE_REGISTER 0
-#define LEDS_BIT_MODIFYING_OUTPUT_REGISTER 0
-#define LEDS_CAPTURE 0
-#define LEDS_DATA_WIDTH 8
-#define LEDS_DO_TEST_BENCH_WIRING 0
-#define LEDS_DRIVEN_SIM_VALUE 0
-#define LEDS_EDGE_TYPE "NONE"
-#define LEDS_FREQ 50000000
-#define LEDS_HAS_IN 0
-#define LEDS_HAS_OUT 1
-#define LEDS_HAS_TRI 0
+#define ALT_MODULE_CLASS_LEDS PIO_IP
+#define LEDS_BASE 0x0
 #define LEDS_IRQ -1
 #define LEDS_IRQ_INTERRUPT_CONTROLLER_ID -1
-#define LEDS_IRQ_TYPE "NONE"
-#define LEDS_NAME "/dev/LEDs"
-#define LEDS_RESET_VALUE 0
-#define LEDS_SPAN 16
-#define LEDS_TYPE "altera_avalon_pio"
+#define LEDS_NAME "/dev/LEDS"
+#define LEDS_SPAN 8
+#define LEDS_TYPE "PIO_IP"
 
 
 /*
@@ -324,7 +311,7 @@
 #define SYSID_IRQ_INTERRUPT_CONTROLLER_ID -1
 #define SYSID_NAME "/dev/sysid"
 #define SYSID_SPAN 8
-#define SYSID_TIMESTAMP 1507662271
+#define SYSID_TIMESTAMP 1507664610
 #define SYSID_TYPE "altera_avalon_sysid_qsys"
 
 
