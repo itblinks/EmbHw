@@ -1,0 +1,6 @@
+INCREMENT com.sigasi.hdt sigasi 2.0 09-apr-2018 uncounted \
+	VENDOR_STRING=company:stud.hslu.ch;id:0;mac:186590cef1cf;mail:marioandrea.fischer@stud.hslu.ch;type:edu \
+	HOSTID=ANY ISSUER=Sigasi ISSUED=09-Oct-2017 START=09-Oct-2017 \
+	SIGN="0625 3AC0 EB2F 4C08 3FD1 1644 950D 32F2 9FB6 F25A ECA5 \
+	BBE0 139F 8D35 1390 16EC 5064 F472 F00B 670A 4E23 84FC 8518 \
+	3FC2 41B4 F640 D704 583A D812 A434"

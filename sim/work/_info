@@ -1,0 +1,92 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dZ:/mariofischer/Documents/HSLU/Master/HS17/TSM_EmbHw/git/sim
+Ectrl_lcd_avalonslave
+Z1 w1508605621
+Z2 DPx4 ieee 11 numeric_std 0 22 :ASDNFgHXf_ih3J@9F3Ze1
+Z3 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z4 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+R0
+Z5 8Z:/mariofischer/Documents/HSLU/Master/HS17/TSM_EmbHw/git/IPCores/LCDCtrl/ctrl_lcd_avalonslave.vhd
+Z6 FZ:/mariofischer/Documents/HSLU/Master/HS17/TSM_EmbHw/git/IPCores/LCDCtrl/ctrl_lcd_avalonslave.vhd
+l0
+L13
+V;VXAclWl3QIQfok9X5C^o2
+!s100 ?l>11h=212o=45TX4D]mU1
+Z7 OV;C;10.5b;63
+32
+Z8 !s110 1508605818
+!i10b 1
+Z9 !s108 1508605817.000000
+Z10 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|Z:/mariofischer/Documents/HSLU/Master/HS17/TSM_EmbHw/git/IPCores/LCDCtrl/ctrl_lcd_avalonslave.vhd|
+Z11 !s107 Z:/mariofischer/Documents/HSLU/Master/HS17/TSM_EmbHw/git/IPCores/LCDCtrl/ctrl_lcd_avalonslave.vhd|
+!i113 1
+Z12 o-work work -2002 -explicit
+Z13 tExplicit 1 CvgOpt 0
+Artl
+R2
+R3
+R4
+Z14 DEx4 work 20 ctrl_lcd_avalonslave 0 22 ;VXAclWl3QIQfok9X5C^o2
+l65
+L36
+Vl=Q`cEe5e0n4`]NhV8D540
+!s100 eG<WGKnzX6eYQb5a`o_[R3
+R7
+32
+R8
+!i10b 1
+R9
+R10
+R11
+!i113 1
+R12
+R13
+Etb_ctrl_lcd
+Z15 w1508596238
+R3
+R4
+R0
+Z16 8Z:/mariofischer/Documents/HSLU/Master/HS17/TSM_EmbHw/git/IPCores/LCDCtrl/tb_ctrl_lcd.vhd
+Z17 FZ:/mariofischer/Documents/HSLU/Master/HS17/TSM_EmbHw/git/IPCores/LCDCtrl/tb_ctrl_lcd.vhd
+l0
+L11
+VQa[?Ik:05YCzG1;K=8Y@X3
+!s100 lG?UlE@KhaW1QJ4CfHeGV0
+R7
+32
+Z18 !s110 1508605817
+!i10b 1
+R9
+Z19 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|Z:/mariofischer/Documents/HSLU/Master/HS17/TSM_EmbHw/git/IPCores/LCDCtrl/tb_ctrl_lcd.vhd|
+Z20 !s107 Z:/mariofischer/Documents/HSLU/Master/HS17/TSM_EmbHw/git/IPCores/LCDCtrl/tb_ctrl_lcd.vhd|
+!i113 1
+R12
+R13
+Artl
+R2
+R14
+R3
+R4
+DEx4 work 11 tb_ctrl_lcd 0 22 Qa[?Ik:05YCzG1;K=8Y@X3
+l52
+L14
+V6U]7fEY[3olSRk6;00o>82
+!s100 _ALFVa=mV[J7<jnCX^T6`2
+R7
+32
+R18
+!i10b 1
+R9
+R19
+R20
+!i113 1
+R12
+R13
