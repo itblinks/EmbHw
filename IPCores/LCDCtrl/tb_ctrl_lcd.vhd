@@ -96,19 +96,22 @@ begin
 		avs_Write_SI     <= '1';
 		wait for CLK_PERIOD;
 		avs_Address_DI   <= "01";
-		avs_WriteData_DI <= (0 => '1', others => '0');
+		avs_WriteData_DI <= (0 => '1',4 => '1' ,others => '0');
 		avs_Write_SI     <= '1';
 		wait for CLK_PERIOD;
 		avs_Write_SI     <= '0';
-		wait for CLK_PERIOD*10;
+		wait for CLK_PERIOD*5.5;
 		avs_Address_DI   <= "00";
 		avs_WriteData_DI <= (others => '1');
 		avs_Write_SI     <= '1';
+		wait for CLK_PERIOD;
 		avs_Address_DI   <= "01";
-		avs_WriteData_DI <= (1 => '1', others => '0');
+		avs_WriteData_DI <= (1 => '1', 4 => '1' ,others => '0');
 		avs_Write_SI     <= '1';
 		wait for CLK_PERIOD;
 		avs_Write_SI     <= '0';
+		avs_Address_DI   <= "00";
+		avs_WriteData_DI <= (others => '0');
 		wait;
 	end process;
 

@@ -41,14 +41,13 @@ architecture rtl of ctrl_lcd_avalonSlave is
 	constant wait_reset : std_logic_vector(15 downto 0) := x"00FF";
 	constant wait_write : std_logic_vector(15 downto 0) := x"0001";
 
-	signal RegWaitCnt  : std_logic_vector(15 downto 0);
-	signal RegLCDData  : std_logic_vector(15 downto 0);
-	signal RegCtrl     : std_logic_vector(15 downto 0);
-	signal SigCtrl     : std_logic_vector(15 downto 0);
-	signal CntActive   : std_logic;
-	signal WriteDone   : std_logic;
-	signal WriteActive : std_logic;
-	signal LcdBusy     : std_logic;
+	signal RegWaitCnt : std_logic_vector(15 downto 0);
+	signal RegLCDData : std_logic_vector(15 downto 0);
+	signal RegCtrl    : std_logic_vector(15 downto 0);
+	signal SigCtrl    : std_logic_vector(15 downto 0);
+	signal CntActive  : std_logic;
+	signal WriteDone  : std_logic;
+	signal TrigWrite  : std_logic;
 
 	signal TrigRstCnt : std_logic;
 	signal TrigWRXCnt : std_logic;
@@ -63,7 +62,8 @@ architecture rtl of ctrl_lcd_avalonSlave is
 	signal SigWaitCnt  : std_logic_vector(15 downto 0);
 
 begin
-	lcd_im0_SO <= '0';
+	lcd_im0_SO    <= '0';
+	lcd_Read_n_SO <= '1';
 	--------------------------------------------------------------
 	-- Write Process with 1CC Latency
 	--------------------------------------------------------------
@@ -72,9 +72,11 @@ begin
 		if Reset_RI = '1' then
 			-- Input by default
 			RegLCDData <= (others => '0');
-			RegCtrl    <= (3 => '1', others => '0'); -- set reset 
+			RegCtrl    <= (3 => '1', 2 => '1', others => '0'); -- set reset 
 		elsif rising_edge(Clk_CI) then
-			if avs_Write_SI = '1' then
+			if s_curr_lcd = S_write then
+				RegCtrl <= SigCtrl;
+			elsif avs_Write_SI = '1' then
 				--Write cycle
 				case avs_Address_DI is
 					when "00"   => RegLCDData <= avs_WriteData_DI;
@@ -111,38 +113,39 @@ begin
 	begin
 		-- default assignment
 		s_next_lcd      <= s_curr_lcd;
-		WriteActive     <= '0';
-		avs_WaitRequest <= '0';
+		TrigWrite       <= '0';
 		lcd_Reset_n_SO  <= '1';
-		LcdBusy         <= '0';
 		TrigRstCnt      <= '0';
 		SigCtrl         <= RegCtrl;
+		avs_WaitRequest <= '1';
 		case s_curr_lcd is
 			when S_reset =>
+				avs_WaitRequest <= '0';
 				if to_integer(unsigned(RegWaitCnt)) = 0 then
 					s_next_lcd <= S_idle; -- lcd reset is not set low (keeps default)
 				else
-					LcdBusy        <= '1';
+					SigCtrl(2)     <= '1';
 					lcd_Reset_n_SO <= '0'; -- remain in this state, keep reset low
 				end if;
 			when S_idle =>
+				SigCtrl(2)          <= '0';
 				if RegCtrl(3) = '1' then
 					s_next_lcd <= S_reset;
 					TrigRstCnt <= '1';
 					SigCtrl(3) <= '0';  -- clear reset
 				elsif RegCtrl(0) = '1' or RegCtrl(1) = '1' then -- start LCD writing
-					s_next_lcd      <= S_write;
-					avs_WaitRequest <= '1';
-					LcdBusy         <= '1';
+					s_next_lcd <= S_write;
+					TrigWrite  <= '1';
+					SigCtrl(2) <= '1';
+				else
+					avs_WaitRequest <= '0';
 				end if;
 			when S_write =>
-				WriteActive     <= '1';
-				avs_WaitRequest <= '1'; -- hold in Wait Request
-				LcdBusy         <= '1';
+				SigCtrl(2) <= '1';
 				if WriteDone = '1' then -- LCD command successfully written
 					s_next_lcd          <= S_idle;
+					avs_WaitRequest <= '0';
 					SigCtrl(1 downto 0) <= (others => '0');
-					avs_WaitRequest     <= '0';
 				end if;
 		end case;
 	end process pCtrlLcd;
@@ -162,7 +165,7 @@ begin
 	--------------------------------------------------------------
 	-- Memoryless Process of Send FSM
 	--------------------------------------------------------------	
-	pSendLcd : process(s_curr_send, RegCtrl(0), RegLCDData, CntActive, s_curr_lcd) is
+	pSendLcd : process(s_curr_send, RegCtrl(0), RegLCDData, CntActive, TrigWrite) is
 	begin
 		-- default assignment
 		s_next_send         <= s_curr_send;
@@ -174,7 +177,7 @@ begin
 		WriteDone           <= '1';
 		case s_curr_send is
 			when S_idle =>
-				if s_curr_lcd = S_write then -- kick this state machine 
+				if TrigWrite = '1' then -- kick this state machine 
 					if RegCtrl(0) = '1' then -- send command
 						lcd_DataCommand_SO <= '0'; -- 
 					end if;
@@ -182,27 +185,27 @@ begin
 					s_next_send <= S_writeL;
 					TrigWRXCnt <= '1';
 					WriteDone <= '0';
+				else
 				end if;
 			when S_writeL =>
-				WriteDone      <= '0';
+				WriteDone <= '0';
 				if RegCtrl(0) = '1' then -- send command
 					lcd_DataCommand_SO <= '0'; -- to send a command, we need to set DCX low
 				end if;                 -- for data, DCX remains high
-				lcd_Data_DIO   <= RegLCDData;
+				lcd_Data_DIO <= RegLCDData;
 				lcd_Write_n_SO <= '0';
 				if CntActive = '0' then
 					s_next_send <= S_writeH;
 					TrigWRXCnt  <= '1';
 				end if;
 			when S_writeH =>
-				WriteDone    <= '0';
+				WriteDone <= '0';
 				if RegCtrl(0) = '1' then -- send command
 					lcd_DataCommand_SO <= '0'; -- to send a command, we need to set DCX low
 				end if;                 -- for data, DCX remains high
 				lcd_Data_DIO <= RegLCDData;
 				if CntActive = '0' then
 					s_next_send <= S_idle;
-					WriteDone   <= '1';
 				end if;
 		end case;
 	end process pSendLcd;
@@ -238,10 +241,20 @@ begin
 					s_next_wait_cnt <= S_CntActive;
 				end if;
 			when S_CntActive =>
-				CntActive <= '1';
 				if unsigned(RegWaitCnt) = 0 then -- 1CC latency
-					s_next_wait_cnt <= S_idle; --wait for cnt done
-
+					--immediately start over
+					if TrigRstCnt = '1' then
+						SigWaitCnt      <= wait_reset;
+						s_next_wait_cnt <= S_CntActive;
+					elsif TrigWRXCnt = '1' then
+						SigWaitCnt      <= wait_write;
+						s_next_wait_cnt <= S_CntActive;
+					else
+						s_next_wait_cnt <= S_idle; --wait for cnt done
+					end if;
+				else
+					SigWaitCnt <= std_logic_vector(unsigned(RegWaitCnt) - 1);
+					CntActive  <= '1';
 				end if;
 		end case;
 	end process pWaitCnt;
@@ -256,11 +269,7 @@ begin
 			RegWaitCnt      <= (others => '0'); --reset wait cnt register
 		elsif rising_edge(Clk_CI) then
 			s_curr_wait_cnt <= s_next_wait_cnt;
-			if CntActive = '1' then
-				RegWaitCnt <= std_logic_vector(unsigned(RegWaitCnt) - 1);
-			else
-				RegWaitCnt <= SigWaitCnt;
-			end if;
+			RegWaitCnt      <= SigWaitCnt;
 		end if;
 	end process pWaitCnt_s;
 
