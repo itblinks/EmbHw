@@ -142,7 +142,8 @@ ACDS_VERSION := 17.0
 ELF := mse_emb_board.elf
 
 # Paths to C, C++, and assembly source files.
-C_SRCS := irq_tmc.c
+C_SRCS += irq_tmc.c
+C_SRCS += main.c
 CXX_SRCS :=
 ASM_SRCS :=
 
@@ -177,7 +178,7 @@ CRT0 :=
 SYS_LIB :=
 
 # Define path to the root of the BSP.
-BSP_ROOT_DIR := ../mse_emb_board_bsp/
+BSP_ROOT_DIR := ../mse_emb_board_lcd_bsp
 
 # List of application specific include directories, library directories and library names
 APP_INCLUDE_DIRS :=

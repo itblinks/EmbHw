@@ -1,15 +1,15 @@
-Fitter Status : Successful - Tue Oct 10 22:58:11 2017
+Fitter Status : Successful - Wed Oct 25 22:42:18 2017
 Quartus Prime Version : 17.0.0 Build 595 04/25/2017 SJ Lite Edition
 Revision Name : niosIISOPC
 Top-level Entity Name : niosIISOPC
 Family : Cyclone IV E
 Device : EP4CE30F23C7
 Timing Models : Final
-Total logic elements : 5,433 / 28,848 ( 19 % )
-    Total combinational functions : 4,788 / 28,848 ( 17 % )
-    Dedicated logic registers : 3,282 / 28,848 ( 11 % )
-Total registers : 3350
-Total pins : 48 / 329 ( 15 % )
+Total logic elements : 5,659 / 28,848 ( 20 % )
+    Total combinational functions : 5,015 / 28,848 ( 17 % )
+    Dedicated logic registers : 3,409 / 28,848 ( 12 % )
+Total registers : 3477
+Total pins : 70 / 329 ( 21 % )
 Total virtual pins : 0
 Total memory bits : 163,392 / 608,256 ( 27 % )
 Embedded Multiplier 9-bit elements : 6 / 132 ( 5 % )

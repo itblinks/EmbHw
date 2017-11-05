@@ -66,6 +66,7 @@ begin
 	lcd_Read_n_SO <= '1';
 	--------------------------------------------------------------
 	-- Write Process with 1CC Latency
+	-- #FF = 16 + 16 = 32 
 	--------------------------------------------------------------
 	pRegWr : process(Clk_CI, Reset_RI) is
 	begin
@@ -91,6 +92,7 @@ begin
 
 	--------------------------------------------------------------
 	-- Read Process with 1CC Latency
+	-- #FF = 16
 	--------------------------------------------------------------
 	pRegRd : process(Clk_CI) is
 	begin
@@ -108,6 +110,7 @@ begin
 
 	--------------------------------------------------------------
 	-- Memoryless Process of Ctrl FSM
+	-- #FF = 0 
 	--------------------------------------------------------------	
 	pCtrlLcd : process(s_curr_lcd, RegCtrl(0), RegWaitCnt, WriteDone, RegCtrl(1), RegCtrl(3), RegCtrl) is
 	begin
@@ -136,7 +139,7 @@ begin
 				elsif RegCtrl(0) = '1' or RegCtrl(1) = '1' then -- start LCD writing
 					s_next_lcd <= S_write;
 					TrigWrite  <= '1';
-					SigCtrl(2) <= '1';
+					SigCtrl(2) <= '1'; -- write busy bit
 				else
 					avs_WaitRequest <= '0';
 				end if;
@@ -144,14 +147,15 @@ begin
 				SigCtrl(2) <= '1';
 				if WriteDone = '1' then -- LCD command successfully written
 					s_next_lcd          <= S_idle;
-					avs_WaitRequest <= '0';
+					avs_WaitRequest <= '0'; -- release wait request to enable next data
 					SigCtrl(1 downto 0) <= (others => '0');
 				end if;
 		end case;
 	end process pCtrlLcd;
 
 	--------------------------------------------------------------
-	-- Memorising Process of Ctrl FSM
+	-- Memorising Process of Ctrl FSM 
+	-- #FF = 2 (assuming binary encoding)
 	--------------------------------------------------------------	
 	pCtrlLcd_s : process(Clk_CI, Reset_RI) is
 	begin
@@ -164,6 +168,7 @@ begin
 
 	--------------------------------------------------------------
 	-- Memoryless Process of Send FSM
+	-- #FF = 0 
 	--------------------------------------------------------------	
 	pSendLcd : process(s_curr_send, RegCtrl(0), RegLCDData, CntActive, TrigWrite) is
 	begin
@@ -204,7 +209,7 @@ begin
 					lcd_DataCommand_SO <= '0'; -- to send a command, we need to set DCX low
 				end if;                 -- for data, DCX remains high
 				lcd_Data_DIO <= RegLCDData;
-				if CntActive = '0' then
+				if CntActive = '0' then -- time out done
 					s_next_send <= S_idle;
 				end if;
 		end case;
@@ -212,6 +217,7 @@ begin
 
 	--------------------------------------------------------------
 	-- Memorising Process of Send FSM
+	-- #FF = 2 (assuming binary encoding)
 	--------------------------------------------------------------	
 	pSendLcd_s : process(Clk_CI, Reset_RI) is
 	begin
@@ -224,6 +230,7 @@ begin
 
 	--------------------------------------------------------------
 	--Wait Counter FSM (mealy type)
+	-- #FF = 0
 	--------------------------------------------------------------	
 	pWaitCnt : process(RegWaitCnt, TrigRstCnt, TrigWRXCnt, s_curr_wait_cnt) is
 	begin
@@ -261,6 +268,7 @@ begin
 
 	--------------------------------------------------------------
 	-- Memorising Process of Wait Cnt FSM
+	-- #FF = 1 + 16 = 17
 	--------------------------------------------------------------	
 	pWaitCnt_s : process(Clk_CI, Reset_RI) is
 	begin
@@ -274,4 +282,3 @@ begin
 	end process pWaitCnt_s;
 
 end architecture rtl;
-

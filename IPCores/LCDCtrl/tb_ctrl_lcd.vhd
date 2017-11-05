@@ -100,7 +100,7 @@ begin
 		avs_Write_SI     <= '1';
 		wait for CLK_PERIOD;
 		avs_Write_SI     <= '0';
-		wait for CLK_PERIOD*5.5;
+		wait for CLK_PERIOD*3.5;
 		avs_Address_DI   <= "00";
 		avs_WriteData_DI <= (others => '1');
 		avs_Write_SI     <= '1';

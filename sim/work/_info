@@ -9,7 +9,7 @@ z2
 cModel Technology
 Z0 dZ:/mariofischer/Documents/HSLU/Master/HS17/TSM_EmbHw/git/sim
 Ectrl_lcd_avalonslave
-Z1 w1508605621
+Z1 w1508965406
 Z2 DPx4 ieee 11 numeric_std 0 22 :ASDNFgHXf_ih3J@9F3Ze1
 Z3 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
 Z4 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
@@ -22,9 +22,9 @@ V;VXAclWl3QIQfok9X5C^o2
 !s100 ?l>11h=212o=45TX4D]mU1
 Z7 OV;C;10.5b;63
 32
-Z8 !s110 1508605818
+Z8 !s110 1509091750
 !i10b 1
-Z9 !s108 1508605817.000000
+Z9 !s108 1509091750.000000
 Z10 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|Z:/mariofischer/Documents/HSLU/Master/HS17/TSM_EmbHw/git/IPCores/LCDCtrl/ctrl_lcd_avalonslave.vhd|
 Z11 !s107 Z:/mariofischer/Documents/HSLU/Master/HS17/TSM_EmbHw/git/IPCores/LCDCtrl/ctrl_lcd_avalonslave.vhd|
 !i113 1
@@ -34,11 +34,11 @@ Artl
 R2
 R3
 R4
-Z14 DEx4 work 20 ctrl_lcd_avalonslave 0 22 ;VXAclWl3QIQfok9X5C^o2
-l65
+DEx4 work 20 ctrl_lcd_avalonslave 0 22 ;VXAclWl3QIQfok9X5C^o2
+l64
 L36
-Vl=Q`cEe5e0n4`]NhV8D540
-!s100 eG<WGKnzX6eYQb5a`o_[R3
+V7FRd?F[=P0[4b:Ea3He9H2
+!s100 F?iH:;QYF4Eg>A>bD]hZl2
 R7
 32
 R8
@@ -49,44 +49,172 @@ R11
 !i113 1
 R12
 R13
-Etb_ctrl_lcd
-Z15 w1508596238
+Elcd_ctrl_if
+Z14 w1509096051
+R2
 R3
 R4
 R0
-Z16 8Z:/mariofischer/Documents/HSLU/Master/HS17/TSM_EmbHw/git/IPCores/LCDCtrl/tb_ctrl_lcd.vhd
-Z17 FZ:/mariofischer/Documents/HSLU/Master/HS17/TSM_EmbHw/git/IPCores/LCDCtrl/tb_ctrl_lcd.vhd
+Z15 8Z:/mariofischer/Documents/HSLU/Master/HS17/TSM_EmbHw/git/IPCores/LCDDMACtrl/lcd_ctrl_if.vhd
+Z16 FZ:/mariofischer/Documents/HSLU/Master/HS17/TSM_EmbHw/git/IPCores/LCDDMACtrl/lcd_ctrl_if.vhd
+l0
+L13
+V@1Y_RR=B[OQTNVj2:gmGj0
+!s100 QY13RLTALQ=I3jlWCZHRI3
+R7
+32
+Z17 !s110 1509806120
+!i10b 1
+Z18 !s108 1509806119.000000
+Z19 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|Z:/mariofischer/Documents/HSLU/Master/HS17/TSM_EmbHw/git/IPCores/LCDDMACtrl/lcd_ctrl_if.vhd|
+Z20 !s107 Z:/mariofischer/Documents/HSLU/Master/HS17/TSM_EmbHw/git/IPCores/LCDDMACtrl/lcd_ctrl_if.vhd|
+!i113 1
+R12
+R13
+Artl
+R2
+R3
+R4
+Z21 DEx4 work 11 lcd_ctrl_if 0 22 @1Y_RR=B[OQTNVj2:gmGj0
+l65
+L36
+VIGR1BzOXB3<CQ=BJoHL>]0
+!s100 le`OE:gKj9Fd5A6GYk3kG1
+R7
+32
+R17
+!i10b 1
+R18
+R19
+R20
+!i113 1
+R12
+R13
+Esdram_dma_if
+Z22 w1509806112
+R2
+R3
+R4
+R0
+Z23 8Z:/mariofischer/Documents/HSLU/Master/HS17/TSM_EmbHw/git/IPCores/LCDDMACtrl/sdram_dma_if.vhd
+Z24 FZ:/mariofischer/Documents/HSLU/Master/HS17/TSM_EmbHw/git/IPCores/LCDDMACtrl/sdram_dma_if.vhd
+l0
+L5
+V3z>_4`nEfEaSKk=1eTi;F1
+!s100 l47I40PB^RomznSi?:A[S2
+R7
+32
+Z25 !s110 1509806121
+!i10b 1
+Z26 !s108 1509806120.000000
+Z27 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|Z:/mariofischer/Documents/HSLU/Master/HS17/TSM_EmbHw/git/IPCores/LCDDMACtrl/sdram_dma_if.vhd|
+Z28 !s107 Z:/mariofischer/Documents/HSLU/Master/HS17/TSM_EmbHw/git/IPCores/LCDDMACtrl/sdram_dma_if.vhd|
+!i113 1
+R12
+R13
+Artl
+R2
+R3
+R4
+Z29 DEx4 work 12 sdram_dma_if 0 22 3z>_4`nEfEaSKk=1eTi;F1
+l59
+L26
+V3nXfAY6=9Cc]No`;RP;Bf0
+!s100 Nlz7<QK]HS_FmI<cKAWk31
+R7
+32
+R25
+!i10b 1
+R26
+R27
+R28
+!i113 1
+R12
+R13
+Esdram_dummy
+Z30 w1509803782
+Z31 DPx4 ieee 9 math_real 0 22 Sk6CSihbPL<f[^Shm]=KX0
+R2
+R3
+R4
+R0
+Z32 8Z:/mariofischer/Documents/HSLU/Master/HS17/TSM_EmbHw/git/IPCores/LCDDMACtrl/sdram_dummy.vhd
+Z33 FZ:/mariofischer/Documents/HSLU/Master/HS17/TSM_EmbHw/git/IPCores/LCDDMACtrl/sdram_dummy.vhd
+l0
+L7
+VEbgz47_7P[>z1l_Bc^23b1
+!s100 ]a5mLQ5;U5d>g=A@feJF43
+R7
+32
+R17
+!i10b 1
+R26
+Z34 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|Z:/mariofischer/Documents/HSLU/Master/HS17/TSM_EmbHw/git/IPCores/LCDDMACtrl/sdram_dummy.vhd|
+Z35 !s107 Z:/mariofischer/Documents/HSLU/Master/HS17/TSM_EmbHw/git/IPCores/LCDDMACtrl/sdram_dummy.vhd|
+!i113 1
+R12
+R13
+Artl
+R31
+R2
+R3
+R4
+Z36 DEx4 work 11 sdram_dummy 0 22 Ebgz47_7P[>z1l_Bc^23b1
+l57
+L20
+VZ]^c4`e;fk1?QH73QzF4g2
+!s100 E<>ffZDfoJ;=L]U::oR>m3
+R7
+32
+R17
+!i10b 1
+R26
+R34
+R35
+!i113 1
+R12
+R13
+Etb_ctrl_lcd
+Z37 w1509805794
+R3
+R4
+R0
+Z38 8Z:/mariofischer/Documents/HSLU/Master/HS17/TSM_EmbHw/git/IPCores/LCDDMACtrl/tb_ctrl_lcd.vhd
+Z39 FZ:/mariofischer/Documents/HSLU/Master/HS17/TSM_EmbHw/git/IPCores/LCDDMACtrl/tb_ctrl_lcd.vhd
 l0
 L11
 VQa[?Ik:05YCzG1;K=8Y@X3
 !s100 lG?UlE@KhaW1QJ4CfHeGV0
 R7
 32
-Z18 !s110 1508605817
+R25
 !i10b 1
-R9
-Z19 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|Z:/mariofischer/Documents/HSLU/Master/HS17/TSM_EmbHw/git/IPCores/LCDCtrl/tb_ctrl_lcd.vhd|
-Z20 !s107 Z:/mariofischer/Documents/HSLU/Master/HS17/TSM_EmbHw/git/IPCores/LCDCtrl/tb_ctrl_lcd.vhd|
+Z40 !s108 1509806121.000000
+Z41 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|Z:/mariofischer/Documents/HSLU/Master/HS17/TSM_EmbHw/git/IPCores/LCDDMACtrl/tb_ctrl_lcd.vhd|
+Z42 !s107 Z:/mariofischer/Documents/HSLU/Master/HS17/TSM_EmbHw/git/IPCores/LCDDMACtrl/tb_ctrl_lcd.vhd|
 !i113 1
 R12
 R13
 Artl
-R2
-R14
-R3
+R29
+R31
+R36
+R21
+Z43 DEx4 work 11 tb_ctrl_lcd 0 22 Qa[?Ik:05YCzG1;K=8Y@X3
 R4
-DEx4 work 11 tb_ctrl_lcd 0 22 Qa[?Ik:05YCzG1;K=8Y@X3
-l52
-L14
-V6U]7fEY[3olSRk6;00o>82
-!s100 _ALFVa=mV[J7<jnCX^T6`2
+R3
+R2
+l65
+L16
+Z44 V_CBjOi1glcN>m6KgE4OC;0
+Z45 !s100 X;0]^0OI0Y54dB:YWEH1b2
 R7
 32
-R18
+R25
 !i10b 1
-R9
-R19
-R20
+R40
+R41
+R42
 !i113 1
 R12
 R13

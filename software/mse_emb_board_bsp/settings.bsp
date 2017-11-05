@@ -2,8 +2,8 @@
 <sch:Settings xmlns:sch="http://www.altera.com/embeddedsw/bsp/schema">
         <BspType>hal</BspType>
         <BspVersion>default</BspVersion>
-        <BspGeneratedTimeStamp>10.10.2017 23:00:59</BspGeneratedTimeStamp>
-        <BspGeneratedUnixTimeStamp>1507669259223</BspGeneratedUnixTimeStamp>
+        <BspGeneratedTimeStamp>21.10.2017 21:43:13</BspGeneratedTimeStamp>
+        <BspGeneratedUnixTimeStamp>1508614993130</BspGeneratedUnixTimeStamp>
         <BspGeneratedLocation>Z:\mariofischer\Documents\HSLU\Master\HS17\TSM_EmbHw\git\software\mse_emb_board_bsp</BspGeneratedLocation>
         <BspSettingsFile>settings.bsp</BspSettingsFile>
         <SopcDesignFile>..\..\sopc_config.sopcinfo</SopcDesignFile>
@@ -935,7 +935,7 @@
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
-                <slaveDescriptor>LEDS</slaveDescriptor>
+                <slaveDescriptor>LCD_8080_Slave_0</slaveDescriptor>
                 <addressRange>0x02004078 - 0x0200407F</addressRange>
                 <addressSpan>8</addressSpan>
                 <attributes/>
@@ -947,8 +947,14 @@
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
-                <slaveDescriptor>jtag_uart</slaveDescriptor>
+                <slaveDescriptor>LEDS</slaveDescriptor>
                 <addressRange>0x02004088 - 0x0200408F</addressRange>
+                <addressSpan>8</addressSpan>
+                <attributes/>
+        </MemoryMap>
+        <MemoryMap>
+                <slaveDescriptor>jtag_uart</slaveDescriptor>
+                <addressRange>0x02004090 - 0x02004097</addressRange>
                 <addressSpan>8</addressSpan>
                 <attributes>printable</attributes>
         </MemoryMap>

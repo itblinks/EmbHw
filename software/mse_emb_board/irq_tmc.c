@@ -11,6 +11,9 @@
 #define CLEAR_IRQ 0x0000
 #define PERFORMANCE_COUNTER_SEG_ISR 1
 
+#define enable 0
+#if enable == 1
+
 typedef struct Counter {
 	alt_u32 value;
 	bool isNew;
@@ -79,3 +82,4 @@ static void handle_timerIRQ(void* context, alt_u32 id) {
 	PERF_END(PERFORMANCE_COUNTER_BASE, PERFORMANCE_COUNTER_SEG_ISR); //first section
 }
 
+#endif

@@ -4,7 +4,7 @@
  * Machine generated for CPU 'CPU' in SOPC Builder design 'sopc_config'
  * SOPC Builder design path: ../../sopc_config.sopcinfo
  *
- * Generated: Tue Oct 10 23:01:01 CEST 2017
+ * Generated: Sat Oct 21 21:43:15 CEST 2017
  */
 
 /*
@@ -149,7 +149,22 @@
 #define __ALTERA_AVALON_TIMER
 #define __ALTERA_NIOS2_GEN2
 #define __ALTPLL
+#define __LCD_8080_SLAVE
 #define __PIO_IP
+
+
+/*
+ * LCD_8080_Slave_0 configuration
+ *
+ */
+
+#define ALT_MODULE_CLASS_LCD_8080_Slave_0 LCD_8080_Slave
+#define LCD_8080_SLAVE_0_BASE 0x2004078
+#define LCD_8080_SLAVE_0_IRQ -1
+#define LCD_8080_SLAVE_0_IRQ_INTERRUPT_CONTROLLER_ID -1
+#define LCD_8080_SLAVE_0_NAME "/dev/LCD_8080_Slave_0"
+#define LCD_8080_SLAVE_0_SPAN 8
+#define LCD_8080_SLAVE_0_TYPE "LCD_8080_Slave"
 
 
 /*
@@ -158,7 +173,7 @@
  */
 
 #define ALT_MODULE_CLASS_LEDS PIO_IP
-#define LEDS_BASE 0x2004078
+#define LEDS_BASE 0x2004088
 #define LEDS_IRQ -1
 #define LEDS_IRQ_INTERRUPT_CONTROLLER_ID -1
 #define LEDS_NAME "/dev/LEDS"
@@ -235,19 +250,19 @@
 #define ALT_NUM_INTERNAL_INTERRUPT_CONTROLLERS 1
 #define ALT_NUM_INTERRUPT_CONTROLLERS 1
 #define ALT_STDERR "/dev/jtag_uart"
-#define ALT_STDERR_BASE 0x2004088
+#define ALT_STDERR_BASE 0x2004090
 #define ALT_STDERR_DEV jtag_uart
 #define ALT_STDERR_IS_JTAG_UART
 #define ALT_STDERR_PRESENT
 #define ALT_STDERR_TYPE "altera_avalon_jtag_uart"
 #define ALT_STDIN "/dev/jtag_uart"
-#define ALT_STDIN_BASE 0x2004088
+#define ALT_STDIN_BASE 0x2004090
 #define ALT_STDIN_DEV jtag_uart
 #define ALT_STDIN_IS_JTAG_UART
 #define ALT_STDIN_PRESENT
 #define ALT_STDIN_TYPE "altera_avalon_jtag_uart"
 #define ALT_STDOUT "/dev/jtag_uart"
-#define ALT_STDOUT_BASE 0x2004088
+#define ALT_STDOUT_BASE 0x2004090
 #define ALT_STDOUT_DEV jtag_uart
 #define ALT_STDOUT_IS_JTAG_UART
 #define ALT_STDOUT_PRESENT
@@ -272,7 +287,7 @@
  */
 
 #define ALT_MODULE_CLASS_jtag_uart altera_avalon_jtag_uart
-#define JTAG_UART_BASE 0x2004088
+#define JTAG_UART_BASE 0x2004090
 #define JTAG_UART_IRQ 0
 #define JTAG_UART_IRQ_INTERRUPT_CONTROLLER_ID 0
 #define JTAG_UART_NAME "/dev/jtag_uart"
@@ -311,7 +326,7 @@
 #define SYSID_IRQ_INTERRUPT_CONTROLLER_ID -1
 #define SYSID_NAME "/dev/sysid"
 #define SYSID_SPAN 8
-#define SYSID_TIMESTAMP 1507668842
+#define SYSID_TIMESTAMP 1508614532
 #define SYSID_TYPE "altera_avalon_sysid_qsys"
 
 

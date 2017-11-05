@@ -1,0 +1,42 @@
+Z:/mariofischer/Documents/HSLU/Master/HS17/TSM_EmbHw/git/IPCores/LCDDMACtrl/tb_ctrl_lcd.vhd {1 {vcom -work work -2002 -explicit -stats=none Z:/mariofischer/Documents/HSLU/Master/HS17/TSM_EmbHw/git/IPCores/LCDDMACtrl/tb_ctrl_lcd.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity tb_ctrl_lcd
+-- Loading package NUMERIC_STD
+-- Compiling architecture rtl of tb_ctrl_lcd
+-- Loading entity lcd_ctrl_if
+-- Loading package MATH_REAL
+-- Loading entity sdram_dummy
+-- Loading entity sdram_dma_if
+
+} {} {}} Z:/mariofischer/Documents/HSLU/Master/HS17/TSM_EmbHw/git/IPCores/LCDDMACtrl/lcd_ctrl_if.vhd {1 {vcom -work work -2002 -explicit -stats=none Z:/mariofischer/Documents/HSLU/Master/HS17/TSM_EmbHw/git/IPCores/LCDDMACtrl/lcd_ctrl_if.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity lcd_ctrl_if
+-- Compiling architecture rtl of lcd_ctrl_if
+
+} {} {}} Z:/mariofischer/Documents/HSLU/Master/HS17/TSM_EmbHw/git/IPCores/LCDDMACtrl/sdram_dma_if.vhd {1 {vcom -work work -2002 -explicit -stats=none Z:/mariofischer/Documents/HSLU/Master/HS17/TSM_EmbHw/git/IPCores/LCDDMACtrl/sdram_dma_if.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity sdram_dma_if
+-- Compiling architecture RTL of sdram_dma_if
+
+} {} {}} Z:/mariofischer/Documents/HSLU/Master/HS17/TSM_EmbHw/git/IPCores/LCDDMACtrl/sdram_dummy.vhd {1 {vcom -work work -2002 -explicit -stats=none Z:/mariofischer/Documents/HSLU/Master/HS17/TSM_EmbHw/git/IPCores/LCDDMACtrl/sdram_dummy.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Loading package MATH_REAL
+-- Compiling entity sdram_dummy
+-- Compiling architecture RTL of sdram_dummy
+
+} {} {}}
