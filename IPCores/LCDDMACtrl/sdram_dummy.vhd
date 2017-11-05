@@ -87,7 +87,7 @@ begin
 
 	dummyRAMMemless : process(num_elements)
 	begin
-		if unsigned(num_elements) = 2 then
+		if unsigned(num_elements) > 2 then
 			avs_waitRequest <= '1';
 		else
 			avs_waitRequest <= '0';

@@ -170,6 +170,16 @@ begin
 		dma_initTF    <= '0';
 		wait for 2.9 us;
 		dma_pop       <= '1';
+		wait for 14 us;
+		wait until rising_edge(clk_sti);
+		dma_startAddr <= (1 => '1', 0 => '1', others => '0');
+		dma_sizeTF    <= x"000000FA";
+		dma_initTF    <= '1';
+		wait for CLK_PERIOD;
+		wait until rising_edge(clk_sti);
+		dma_initTF    <= '0';
+		wait for 2.9 us;
+		dma_pop       <= '1';
 		wait;
 	end process;
 	----------------------------------------------------
