@@ -11,7 +11,7 @@ build:
 	fi
 	pdflatex -jobname embHw -output-directory obj main.tex
 	#cd obj && bibtex lightcom.aux
-	latex_count=5 ; \
+	latex_count=3 ; \
 	while ! cmp -s obj/main.aux obj/main_old.aux && [ $$latex_count -gt 0 ] ;\
 	do \
 		echo "Rerunning latex....." ;\
