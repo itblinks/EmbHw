@@ -1,0 +1,24 @@
+\section{Scheduling}
+\subsection{Guaranteed schedule}
+Utilisation factor: 
+\[ U = \sum\limits_{i=1}^{n}\frac{C_i}{T_i} \]
+\begin{itemize}
+    \item[] $C_i$: Cycle frequency of task i
+    \item[] $T_i$: Worst case execution time (WCET) of task i
+\end{itemize}
+Utilisation bound: 
+\[ U_b = n \cdot \left(2^{\frac{1}{n}} - 1\right) \]
+Guaranteed schedule:
+\[ U \leq U_b \]
+Schedule possible:
+\[ U \leq 1 \]
+Utilisation bound list
+%\begin{table}[h!]
+%    %\rowcolor{gray}
+%    %# Tasks & $U_b$ \\
+%    1 & \\
+%    2 & \\
+%    3 & \\
+%    4 & \\
+%    5 & \\
+%\end{table}
