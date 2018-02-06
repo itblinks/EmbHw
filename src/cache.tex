@@ -1,1 +1,11 @@
 \section{Cache}
+\subsection{Average access time}
+\[ t_{a_n} = t_{c_n} + (1 - h_n) \cdot t_{c_{n+1}} \]
+\[ t_{a_1} = t_{c_1} + (1 - h_1) \cdot t_{a_2} \]
+\[ t_{a_2} = t_{c_2} + (1 - h_2) \cdot t_m \]
+\[ t_{a_1} = t_{c_1} + (1 - h_1) \cdot (t_{c_2} + (1 - h_2) \cdot t_m) \]
+\begin{itemize}
+    \item[] $t_{c_n}$: Access time for layer n cache
+    \item[] $t_{a_n}$: Average access time for layer n cache
+    \item[] $h_n$: Hit rate on layer n cache
+\end{itemize}
