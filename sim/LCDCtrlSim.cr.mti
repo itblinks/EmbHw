@@ -1,0 +1,20 @@
+Z:/mariofischer/Documents/HSLU/Master/HS17/TSM_EmbHw/git/IPCores/LCDCtrl/ctrl_lcd_avalonslave.vhd {1 {vcom -work work -2002 -explicit -stats=none Z:/mariofischer/Documents/HSLU/Master/HS17/TSM_EmbHw/git/IPCores/LCDCtrl/ctrl_lcd_avalonslave.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity ctrl_lcd_avalonSlave
+-- Compiling architecture rtl of ctrl_lcd_avalonSlave
+
+} {} {}} Z:/mariofischer/Documents/HSLU/Master/HS17/TSM_EmbHw/git/IPCores/LCDCtrl/tb_ctrl_lcd.vhd {1 {vcom -work work -2002 -explicit -stats=none Z:/mariofischer/Documents/HSLU/Master/HS17/TSM_EmbHw/git/IPCores/LCDCtrl/tb_ctrl_lcd.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity tb_ctrl_lcd
+-- Compiling architecture rtl of tb_ctrl_lcd
+-- Loading package NUMERIC_STD
+-- Loading entity ctrl_lcd_avalonSlave
+
+} {} {}}
