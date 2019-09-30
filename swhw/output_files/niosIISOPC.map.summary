@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Wed Oct 25 22:40:00 2017
+Quartus Prime Version : 17.0.0 Build 595 04/25/2017 SJ Lite Edition
+Revision Name : niosIISOPC
+Top-level Entity Name : niosIISOPC
+Family : Cyclone IV E
+Total logic elements : 6,050
+    Total combinational functions : 5,004
+    Dedicated logic registers : 3,517
+Total registers : 3517
+Total pins : 70
+Total virtual pins : 0
+Total memory bits : 163,392
+Embedded Multiplier 9-bit elements : 6
+Total PLLs : 1
