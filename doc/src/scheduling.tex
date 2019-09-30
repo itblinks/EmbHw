@@ -1,0 +1,28 @@
+\section{Scheduling}
+\subsection{Rate monotonic scheduling}
+\subsubsection{Guaranteed schedule}
+Utilisation factor: 
+\[ U = \sum\limits_{i=1}^{n}\frac{C_i}{T_i} \]
+\begin{itemize}
+    \item[] $C_i$: Worst case execution time (WCET) of task i
+    \item[] $T_i$: Period of task i
+\end{itemize}
+Utilisation bound: 
+\[ U_b = n \cdot \left(2^{\frac{1}{n}} - 1\right) \]
+Guaranteed schedule:
+\[ U \leq U_b \]
+Schedule possible:
+\[ U \leq 1 \]
+Utilisation bound list
+\begin{table}[h!]
+    \begin{zebratabular}{ll}
+        \rowcolor{gray}
+        Number of Tasks & $U_b$ \\
+        1               & 1 \\
+        2               & 0.8284 \\
+        3               & 0.7798 \\
+        4               & 0.7568 \\
+        5               & 0.7435 \\
+        $\infty$        & 0.6931 \\
+    \end{zebratabular}
+\end{table}

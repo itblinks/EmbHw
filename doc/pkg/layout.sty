@@ -1,0 +1,55 @@
+\usepackage{blindtext}
+\usepackage{array}
+\usepackage[automark,headsepline]{scrlayer-scrpage}
+\usepackage[ngerman]{babel}
+\usepackage{graphicx}
+\usepackage[myheadings]{fullpage}
+\usepackage[a4paper,left=3cm,right=2cm,top=2.5cm,bottom=2.5cm]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage{subcaption} 
+\usepackage{listings}
+\usepackage{courier}
+
+\newsavebox{\largestimage}
+\clearpairofpagestyles
+\automark{section}
+\clearpairofpagestyles
+\ihead{\headmark}
+\ohead{\pagemark}
+\pagestyle{scrheadings}
+\addtokomafont{disposition}{\rmfamily}
+\def\code#1{\texttt{#1}}
+\lstset{basicstyle=\footnotesize\ttfamily, breaklines=true}
+\lstset{language=C}
+
+% Farben
+    \usepackage{color}          % Farben
+    \usepackage{colortbl}       % Tabellen einfärben
+    \makeatletter       % @ Teil des Befehls
+    \@ifclassloaded{beamer}{
+        % Do not load package xcolor in beamer class as beamer class loads xcolor
+    }{
+        \usepackage[table]{xcolor}  % 
+    }
+    \makeatother        % @ wieder anderes Zeichen
+
+% Eigene definierte Farben
+    \definecolor{gray}      {gray}  {0.749}
+    \definecolor{lgray}     {gray}  {0.85}
+    \definecolor{red}       {rgb}   {1 ,  0  , 0}
+    \definecolor{green}     {rgb}   {0 ,  1  , 0}
+    \definecolor{blue}      {rgb}   {0 ,  0  , 1}
+    \definecolor{darkgreen} {rgb}   {0 , 0.6 , 0}
+
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{L}[1]{>{\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+
+% Eigene Tabellen
+    % Hellgrau und weiss abwechselnd
+    \newenvironment{zebratabular}{\rowcolors{2}{lgray}{white}\tabular}{\endtabular}
+    \newenvironment{zebralongtable}{\rowcolors{2}{lgray}{white}\longtable}{\endlongtable}
+
+%% Personal Details
+\author{Mario Fischer, Daniel Winz}
+\title{Zusammenfassung Desing of Embedded Hardware and Firmware}
+\subtitle{TSM\_EmbHw}
